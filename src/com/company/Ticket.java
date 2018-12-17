@@ -1,10 +1,13 @@
 package com.company;
 
 public abstract class Ticket {
-    private  int serialNumber;
-
+    private int serialNumber;
+    public static int x = 0;
     public Ticket()
-    {}
+    {
+        serialNumber = getNextSerialNumber();
+        x++;
+    }
 
     public abstract double getPrice();
 
@@ -15,7 +18,7 @@ public abstract class Ticket {
 
     private static int getNextSerialNumber()
     {
-
+        return (int)(Math.random()*100 +(100*x));
     }
 
 }
